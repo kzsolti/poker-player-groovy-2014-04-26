@@ -12,7 +12,7 @@ class Player {
 		helper = new GameStateHelper(gameState: gameState)
 
 		// if the stakes are right, we bet as normal
-		switch (CardEvaluator.evaluate(helper.us.hole_cards + helper.community_cards)) {
+		switch (CardEvaluator.evaluate(helper.us.hole_cards + helper.gameState.community_cards)) {
 			case 0..4:
 				return 0
 			case 5..10:
