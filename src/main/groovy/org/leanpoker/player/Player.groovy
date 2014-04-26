@@ -33,10 +33,6 @@ class Player {
 					return helper.callAmount
 				}
             case 11..19:
-                if (smallBetCount > 4) {
-                    return 0
-                }
-                smallBetCount++
                 return helper.callAmount + helper.minimumRaise * 2
 			case 20..100:
 				return helper.us.stack
