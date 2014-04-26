@@ -22,7 +22,7 @@ class CardEvaluator {
     }
 
     private static int checkForBigCards(List<Object> holeCards) {
-        if (CARDS.indexOf(holeCards[0].rank) > 6 || CARDS.indexOf(holeCards[1].rank) > 6)
+        if (CARDS.indexOf(holeCards[0].rank) >= 6 || CARDS.indexOf(holeCards[1].rank) >= 6)
             return 1;
 
         0
