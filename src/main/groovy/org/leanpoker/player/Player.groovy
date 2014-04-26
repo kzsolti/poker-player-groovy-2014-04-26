@@ -13,7 +13,7 @@ class Player {
 
 		// if the stakes are right, we bet as normal
 		switch (CardEvaluator.evaluate(helper.us.hole_cards + helper.community_cards)) {
-			case 0:
+			case 0..4:
 				return 0
 			case 1..4:
 				// if the bet is too high, we must tread cautiously
@@ -32,7 +32,7 @@ class Player {
 				} else {
 					return helper.callAmount
 				}
-			case 5..10:
+			case 10..100:
 				return helper.us.stack
 //				return helper.callAmount + helper.minimumRaise
 		}
