@@ -10,6 +10,7 @@ class CardEvaluator {
         points += checkForPair(holeCards)
         points += checkForBigCards(holeCards)
         points += checkForBiggerCards(holeCards)
+        points += checkForSameSuits(holeCards)
 
         points
     }
@@ -24,5 +25,9 @@ class CardEvaluator {
 
     private static int checkForBiggerCards(List<Object> holeCards) {
         holeCards.count { CARDS.indexOf(it.rank) > 8 }
+    }
+
+    private static int checkForSameSuits(List<Object> holeCards) {
+        holeCards.countBy{ it.suit }.size() == 1 ? 2 : 0
     }
 }
