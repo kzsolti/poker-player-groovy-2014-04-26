@@ -30,7 +30,7 @@ class CardEvaluator {
 
     private static int checkForBiggerCards(List<Object> holeCards) {
         if (CARDS.indexOf(holeCards[0].rank) > 9 || CARDS.indexOf(holeCards[1].rank) > 9)
-            return 2;
+            return 1;
 
         0
     }
