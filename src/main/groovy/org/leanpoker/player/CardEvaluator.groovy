@@ -6,12 +6,23 @@ class CardEvaluator {
     static def evaluate(List<Object> holeCards) {
         def points = 0;
 
-        if (holeCards[0].rank == holeCards[1].rank)
-            points += 5;
-
-        if (CARDS.indexOf(holeCards[0].rank) > 6 || CARDS.indexOf(holeCards[1].rank) > 6)
-            points += 1;
+        points += checkForPair(holeCards)
+        points += checkForBigCards(holeCards)
 
         points
+    }
+
+    private static int checkForBigCards(List<Object> holeCards, int points) {
+        if (CARDS.indexOf(holeCards[0].rank) > 6 || CARDS.indexOf(holeCards[1].rank) > 6)
+            return 2;
+
+        0
+    }
+
+    private static int checkForPair(List<Object> holeCards) {
+        if (holeCards[0].rank == holeCards[1].rank)
+            return 5;
+
+        0
     }
 }
