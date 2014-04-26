@@ -2,7 +2,7 @@ package org.leanpoker.player
 
 class GameStateHelper {
 
-	final def gameState
+	def gameState
 
 	def getUs() {
 		gameState.players.find { it.version == Player.VERSION }
