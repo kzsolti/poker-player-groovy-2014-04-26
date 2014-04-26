@@ -1,7 +1,5 @@
 package org.leanpoker.player
 
-import org.leanpoker.player.Player
-
 class GameStateHelper {
 
 	final def gameState
@@ -12,5 +10,9 @@ class GameStateHelper {
 
 	int getCallAmount() {
 		gameState.current_buy_in - us.bet
+	}
+
+	int getMinimumRaise() {
+		gameState.minimum_raise
 	}
 }

@@ -8,10 +8,13 @@ class Player {
 
     static int betRequest(def gameState) {
 		helper = new GameStateHelper(gameState: gameState)
-		if (CardEvaluator.evaluate(helper.us.hole_cards) > 0) {
-			helper.callAmount
-		} else {
-			0
+		switch (CardEvaluator.evaluate(helper.us.hole_cards)) {
+			case 0:
+				return 0
+			case 1..2:
+				return helper.callAmount
+			case 3..10:
+				return helper.callAmount + helper.minimumRaise
 		}
     }
 
