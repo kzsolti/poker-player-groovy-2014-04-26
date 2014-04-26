@@ -4,8 +4,8 @@ class CardEvaluator {
     // card values             0    1    2    3    4    5    6    7    8    9    10   11   12
     static final def CARDS = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 
-    static final def VALUE_BIG_CARD    = 1
-    static final def VALUE_BIGGER_CARD = 2
+    static final def VALUE_BIG_CARD    = 3
+    static final def VALUE_BIGGER_CARD = 5
     static final def VALUE_SAME_SUITS  = 2
     static final def VALUE_PAIR        = 4
     static final def VALUE_TWO_PAIRS   = 20
