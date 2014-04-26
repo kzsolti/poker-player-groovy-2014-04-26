@@ -1,5 +1,6 @@
 package org.leanpoker.player
 
+import groovy.json.JsonSlurper
 import spock.lang.Specification
 /**
  * Java/Groovy unit test using the Spock framework.
@@ -7,11 +8,11 @@ import spock.lang.Specification
  */
 class PlayerTestSpock extends Specification {
 
-//	def "The player should return a valid number"() {
-//		given:
-//		def gameState = new JsonSlurper().parseText(new File("test/resources/testdata.json").text)
-//
-//		expect:
-//		Player.betRequest(gameState) >= 0
-//	}
+	def "The player should return a valid number"() {
+		given:
+		def gameState = new JsonSlurper().parseText(new File("src/test/resources/testdata.json").text)
+
+		expect:
+		Player.betRequest(gameState) >= 0
+	}
 }
