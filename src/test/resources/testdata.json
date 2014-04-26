@@ -32,7 +32,7 @@
 			"id": 1,
 			"name": "Bob",
 			"status": "active",
-			"version": "Great and Grandious Groovy 0.5",
+			"version": "Great and Grandious Groovy 0.6",
 			"stack": 1590,
 			"bet": 80,
 			"hole_cards": [

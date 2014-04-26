@@ -6,10 +6,11 @@ class CardEvaluator {
 
     static final def VALUE_BIG_CARD    = 1
     static final def VALUE_BIGGER_CARD = 2
-    static final def VALUE_SAME_SUITS = 2
+    static final def VALUE_SAME_SUITS  = 2
     static final def VALUE_PAIR        = 5
     static final def VALUE_TWO_PAIRS   = 20
     static final def VALUE_THREES      = 25
+    static final def VALUE_FULL_HOUSE  = 35
     static final def VALUE_FOURS       = 50
 
     static def evaluate(List<Object> holeCards) {
@@ -31,6 +32,7 @@ class CardEvaluator {
         def threes = sameCards.count { rank, count -> count == 3 }
         def fours = sameCards.count { rank, count -> count == 4 }
 
+		if (pairs == 1 && threes == 1) return VALUE_FULL_HOUSE
         if (fours > 0) return VALUE_FOURS
         if (threes > 0) return VALUE_THREES
         if (pairs > 1) return VALUE_TWO_PAIRS

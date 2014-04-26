@@ -26,6 +26,7 @@ class CardEvaluatorTest extends Specification {
         ["C2", "D4", "D2", "C3", "S2"] || CardEvaluator.VALUE_THREES // three of a kind
         ["C2", "D4", "D2", "CA", "S2"] || CardEvaluator.VALUE_THREES + CardEvaluator.VALUE_BIGGER_CARD // three of a kind with a big card
         ["C2", "D7", "S2", "D2", "H2"] || CardEvaluator.VALUE_FOURS // four of a kind
+        ["C2", "D7", "S2", "D2", "H7"] || CardEvaluator.VALUE_FULL_HOUSE // full house
     }
 
     private ArrayList<LinkedHashMap<String, String>> getCards(List<String> cards) {
