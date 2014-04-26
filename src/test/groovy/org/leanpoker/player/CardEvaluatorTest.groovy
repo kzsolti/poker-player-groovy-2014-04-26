@@ -22,6 +22,7 @@ class CardEvaluatorTest extends Specification {
         ["C9", "C8"]   || CardEvaluator.VALUE_SAME_SUITS + CardEvaluator.VALUE_BIG_CARD * 2 // big flush
         ["CA", "CJ"]   || CardEvaluator.VALUE_SAME_SUITS + CardEvaluator.VALUE_BIGGER_CARD * 2 // bigger flush
         // Hands
+        ["C2", "D4", "D2", "C3", "S3"] || CardEvaluator.VALUE_TWO_PAIRS // two pairs
         ["C2", "D4", "D2", "C3", "S2"] || CardEvaluator.VALUE_THREES // three of a kind
         ["C2", "D4", "D2", "CA", "S2"] || CardEvaluator.VALUE_THREES + CardEvaluator.VALUE_BIGGER_CARD // three of a kind with a big card
         ["C2", "D7", "S2", "D2", "H2"] || CardEvaluator.VALUE_FOURS // four of a kind
