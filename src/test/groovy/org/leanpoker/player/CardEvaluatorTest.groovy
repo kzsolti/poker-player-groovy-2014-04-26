@@ -12,6 +12,9 @@ class CardEvaluatorTest extends Specification {
         ["3", "7"] || 0
         ["8", "2"] || 1
         ["2", "Q"] || 2
+        ["5", "5"] || 5
+        ["8", "8"] || 6
+        ["Q", "Q"] || 7
     }
 
     private ArrayList<LinkedHashMap<String, String>> getCards(List<String> cards) {
