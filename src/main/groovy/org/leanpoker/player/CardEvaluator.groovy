@@ -15,24 +15,14 @@ class CardEvaluator {
     }
 
     private static int checkForPair(List<Object> holeCards) {
-        if (holeCards[0].rank == holeCards[1].rank) {
-            return 3
-        };
-
-        0
+        holeCards[0].rank == holeCards[1].rank ? 3 : 0
     }
 
     private static int checkForBigCards(List<Object> holeCards) {
-        if (CARDS.indexOf(holeCards[0].rank) >= 6 || CARDS.indexOf(holeCards[1].rank) >= 6)
-            return 1;
-
-        0
+        holeCards.count { CARDS.indexOf(it.rank) > 5 }
     }
 
     private static int checkForBiggerCards(List<Object> holeCards) {
-        if (CARDS.indexOf(holeCards[0].rank) > 9 || CARDS.indexOf(holeCards[1].rank) > 9)
-            return 1;
-
-        0
+        holeCards.count { CARDS.indexOf(it.rank) > 8 }
     }
 }

@@ -8,13 +8,14 @@ class CardEvaluatorTest extends Specification {
         CardEvaluator.evaluate(getCards(cards)) == expected
 
         where:
-        cards      || expected
-        ["3", "7"] || 0
-        ["8", "2"] || 1
-        ["2", "Q"] || 2
-        ["5", "5"] || 3
-        ["8", "8"] || 4
-        ["Q", "Q"] || 5
+        cards        || expected
+        ["3", "7"]   || 0
+        ["8", "2"]   || 1
+        ["2", "Q"]   || 2
+        ["5", "5"]   || 3
+        ["8", "8"]   || 5
+        ["10", "10"] || 5
+        ["J", "J"]   || 7
     }
 
     private ArrayList<LinkedHashMap<String, String>> getCards(List<String> cards) {
