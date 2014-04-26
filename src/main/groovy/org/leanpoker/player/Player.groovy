@@ -8,7 +8,11 @@ class Player {
 
     static int betRequest(def gameState) {
 		helper = new GameStateHelper(gameState: gameState)
-        0
+		if (CardEvaluator.evaluate(helper.us.hole_cards) > 0) {
+			helper.callAmount
+		} else {
+			0
+		}
     }
 
     static void showdown(def gameState) {
