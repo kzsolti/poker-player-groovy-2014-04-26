@@ -15,8 +15,9 @@ class CardEvaluator {
     }
 
     private static int checkForPair(List<Object> holeCards) {
-        if (holeCards[0].rank == holeCards[1].rank)
-            return 5;
+        if (holeCards[0].rank == holeCards[1].rank) {
+            return 3
+        };
 
         0
     }
