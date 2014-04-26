@@ -9,6 +9,8 @@ class Player {
     static int betRequest(def gameState) {
 		helper = new GameStateHelper(gameState: gameState)
 
+		return 1000
+
 		// if the bet is too high, we must tread cautiously
 		if (helper.us.stack > 50) {
 			if (helper.callAmount > helper.us.stack / 2) {
