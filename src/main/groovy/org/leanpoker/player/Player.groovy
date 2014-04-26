@@ -2,9 +2,11 @@ package org.leanpoker.player
 
 class Player {
 
-    static final String VERSION = 'Great and Grandious Groovy 0.4'
+    static final String VERSION = 'Great and Grandious Groovy 0.5'
 
 	static GameStateHelper helper
+
+	static int smallBetCount = 0
 
     static int betRequest(def gameState) {
 		helper = new GameStateHelper(gameState: gameState)
@@ -22,6 +24,10 @@ class Player {
 					if (helper.callAmount > helper.us.stack / 3) {
 						return helper.callAmount // we call
 					}
+					if (smallBetCount > 4) {
+						return 0
+					}
+					smallBetCount++
 					return helper.callAmount + helper.minimumRaise
 				} else {
 					return helper.callAmount
@@ -33,5 +39,6 @@ class Player {
     }
 
     static void showdown(def gameState) {
+		smallBetCount = 0
     }
 }
