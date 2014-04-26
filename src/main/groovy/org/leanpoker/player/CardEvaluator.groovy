@@ -12,7 +12,7 @@ class CardEvaluator {
     static def evaluate(List<Object> holeCards) {
         def points = 0;
 
-        points += checkForPair(holeCards)
+        points += checkForSameRank(holeCards)
         points += checkForBigCards(holeCards)
         points += checkForBiggerCards(holeCards)
         points += checkForSameSuits(holeCards)
@@ -20,8 +20,20 @@ class CardEvaluator {
         points
     }
 
-    private static int checkForPair(List<Object> holeCards) {
-        holeCards[0].rank == holeCards[1].rank ? VALUE_PAIR : 0
+    private static int checkForSameRank(List<Object> holeCards) {
+//        holeCards[0].rank == holeCards[1].rank ? VALUE_PAIR : 0
+        def sameCards = holeCards.countBy{ it.rank }
+
+        def pairs = sameCards.count { rank, count -> count == 2 }
+        def threes = sameCards.count { rank, count -> count == 3 }
+        def fours = sameCards.count { rank, count -> count == 4 }
+
+        if (fours > 0) return 50
+        if (threes > 0) return 25
+        if (pairs > 1) return 20
+        if (pairs > 0) return 5
+
+        0
     }
 
     private static int checkForBigCards(List<Object> holeCards) {

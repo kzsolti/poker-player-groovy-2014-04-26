@@ -10,17 +10,21 @@ class CardEvaluatorTest extends Specification {
         CardEvaluator.evaluate(getCards(cards)) == expected
 
         where:
-        cards        || expected
+        cards          || expected
         ["D3", "H7"]   || 0 // nothing
         ["C8", "S2"]   || 1 // one big card
         ["C2", "DQ"]   || 2 // one bigger card
-        ["C5", "D5"]   || 3 // pair
-        ["C8", "D8"]   || 5 // big pair
-        ["C10", "D10"] || 5 // big pair
-        ["CJ", "DJ"]   || 7 // bigger pair
+        ["C5", "D5"]   || 5 // pair
+        ["C8", "D8"]   || 7 // big pair
+        ["C10", "D10"] || 7 // big pair
+        ["CJ", "DJ"]   || 9 // bigger pair
         ["C2", "C6"]   || 2 // flush
         ["C9", "C8"]   || 4 // big flush
         ["CA", "CJ"]   || 6 // bigger flush
+        // Hands
+        ["C2", "D4", "D2", "C3", "S2"] || 25 // three of a kind
+        ["C2", "D4", "D2", "CA", "S2"] || 27 // three of a kind with a big card
+        ["C2", "D7", "S2", "D2", "H2"] || 50 // four of a kind
     }
 
     private ArrayList<LinkedHashMap<String, String>> getCards(List<String> cards) {
