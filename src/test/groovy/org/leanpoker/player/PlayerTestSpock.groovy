@@ -7,6 +7,9 @@ import spock.lang.Specification
  * https://code.google.com/p/spock/
  */
 class PlayerTestSpock extends Specification {
+    def setupSpec() {
+        Log.print = false
+    }
 
 	def "The player should return a valid number"() {
 		given:

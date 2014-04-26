@@ -4,6 +4,10 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 class CardEvaluatorTest extends Specification {
+    def setupSpec() {
+        Log.print = false
+    }
+
     @Unroll
     def "should return correct value for each cases"() {
         expect:
