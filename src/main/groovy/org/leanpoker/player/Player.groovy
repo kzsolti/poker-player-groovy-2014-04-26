@@ -42,7 +42,10 @@ class Player {
 				}
             case 11..19:
                 Log.log "helper.callAmount + helper.minimumRaise * 2"
-                return helper.callAmount + helper.minimumRaise * 2
+                if (helper.minimumRaise < helper.us.stack / 2)
+                    return helper.callAmount + helper.minimumRaise
+
+                return helper.callAmount
 			case 20..100:
                 Log.log "helper.us.stack"
 				return helper.us.stack
