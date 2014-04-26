@@ -22,6 +22,7 @@ class Player {
 					if (helper.callAmount > helper.us.stack / 3) {
 						return helper.callAmount // we call
 					}
+					return helper.callAmount + helper.minimumRaise
 				} else {
 					return helper.callAmount
 				}
