@@ -13,7 +13,7 @@ class Player {
 		switch (CardEvaluator.evaluate(helper.us.hole_cards)) {
 			case 0:
 				return 0
-			case 1..2:
+			case 1..4:
 				// if the bet is too high, we must tread cautiously
 				if (helper.us.stack > 50) {
 					if (helper.callAmount > helper.us.stack / 2) {
@@ -25,7 +25,7 @@ class Player {
 				} else {
 					return helper.callAmount
 				}
-			case 3..10:
+			case 5..10:
 				return helper.us.stack
 //				return helper.callAmount + helper.minimumRaise
 		}
