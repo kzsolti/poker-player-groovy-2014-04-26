@@ -17,9 +17,9 @@ class Player {
 				return 0
 			case 5..10:
 				// if the bet is too high, we must tread cautiously
-				if (helper.us.stack > 50) {
+				if (helper.us.stack > 50 && !helper.duel) {
 					if (helper.callAmount > helper.us.stack / 2) {
-						return 0 // we fold, or call
+                        return 0 // we fold, or call
 					}
 					if (helper.callAmount > helper.us.stack / 3) {
 						return helper.callAmount // we call

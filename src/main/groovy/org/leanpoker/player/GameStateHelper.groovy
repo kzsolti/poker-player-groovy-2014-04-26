@@ -15,4 +15,8 @@ class GameStateHelper {
 	int getMinimumRaise() {
 		gameState.minimum_raise
 	}
+
+    boolean getDuel() {
+        gameState.players.count { it.status == "active" } == 2
+    }
 }
