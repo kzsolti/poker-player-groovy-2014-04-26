@@ -2,7 +2,7 @@ package org.leanpoker.player
 
 class Player {
 
-    static final String VERSION = 'Great and Grandious Groovy'
+    static final String VERSION = 'Great and Grandious Groovy 0.1'
 
 	static GameStateHelper helper
 
