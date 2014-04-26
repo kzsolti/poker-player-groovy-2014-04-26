@@ -7,7 +7,7 @@ class CardEvaluator {
     static final def VALUE_BIG_CARD    = 1
     static final def VALUE_BIGGER_CARD = 2
     static final def VALUE_SAME_SUITS  = 2
-    static final def VALUE_PAIR        = 5
+    static final def VALUE_PAIR        = 4
     static final def VALUE_TWO_PAIRS   = 20
     static final def VALUE_THREES      = 25
     static final def VALUE_FULL_HOUSE  = 35
