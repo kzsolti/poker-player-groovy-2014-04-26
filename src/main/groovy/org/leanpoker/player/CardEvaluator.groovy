@@ -9,6 +9,7 @@ class CardEvaluator {
 
         points += checkForPair(holeCards)
         points += checkForBigCards(holeCards)
+        points += checkForBiggerCards(holeCards)
 
         points
     }
@@ -27,7 +28,7 @@ class CardEvaluator {
         0
     }
 
-    private static int checkForBiggerCards(List<Object> holeCards, int points) {
+    private static int checkForBiggerCards(List<Object> holeCards) {
         if (CARDS.indexOf(holeCards[0].rank) > 9 || CARDS.indexOf(holeCards[1].rank) > 9)
             return 2;
 
